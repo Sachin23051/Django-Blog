@@ -56,21 +56,26 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Blog_Webite.urls'
 
+# template_file_path = os.path.join(BASE_DIR,'user','templates')
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'user' / "templates"],  
+        # 'DIRS': [template_file_path],  # Add your template directories here if any
+        # Add your template directories here if any
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',
+                'django.template.context_processors.request',  # Add this line
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'Blog_Webite.wsgi.application'
 
